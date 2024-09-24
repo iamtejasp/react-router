@@ -1,9 +1,6 @@
-import NavBar from "./NavBar";
-
 const About = () => {
   return (
     <>
-      <NavBar />
       <div>About</div>
     </>
   );
