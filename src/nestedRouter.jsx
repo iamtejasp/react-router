@@ -1,4 +1,4 @@
-import { createBrowserRouter, Outlet } from "react-router-dom";
+import { createBrowserRouter, Navigate, Outlet } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Store from "./pages/Store";
@@ -10,8 +10,8 @@ import TeamNavBar from "./pages/TeamNavBar";
 const nestedRouter = createBrowserRouter([
   {
     element: <NavLayout />,
-    errorElement: <h1>Error</h1>,
     children: [
+      { path: "*", element: <Navigate to={"/"} /> },
       {
         path: "/",
         element: <Home />,
@@ -33,13 +33,17 @@ const nestedRouter = createBrowserRouter([
             element: <Team />,
           },
           {
-            path: "tejas",
-            element: <TeamMember name={"Tejas"} />,
+            path: ":id",
+            element: <TeamMember />,
           },
-          {
-            path: "kayle",
-            element: <TeamMember name={"kayle"} />,
-          },
+          // {
+          //   path: "tejas",
+          //   element: <TeamMember name={"Tejas"} />,
+          // },
+          // {
+          //   path: "kayle",
+          //   element: <TeamMember name={"kayle"} />,
+          // },
         ],
       },
     ],
