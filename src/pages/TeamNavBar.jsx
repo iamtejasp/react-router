@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
-import teamMembers from "../teamMembers.json";
+import { Link, useLoaderData } from "react-router-dom";
+// import teamMembers from "../teamMembers.json";
 
 const TeamNavBar = () => {
+  const teamMembers = useLoaderData();
+
   return (
     // <ul>
     //   <li>

@@ -1,10 +1,7 @@
-import { Link, useParams } from "react-router-dom";
-import teamMembers from "./../teamMembers.json";
+import { Link, useLoaderData } from "react-router-dom";
 
 const TeamMember = () => {
-  const params = useParams();
-
-  const member = teamMembers.find((i) => i.id === params?.id);
+  const member = useLoaderData();
 
   return (
     <>
